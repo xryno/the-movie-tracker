@@ -19,4 +19,5 @@ Additionally, has a login/register function built with passport.js/express-sessi
 
 ### Images
 
-![This is an image](assets/login.png)
+![login](assets/login.png)
+![main](assets/main.png)
