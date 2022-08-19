@@ -107,7 +107,6 @@ app.post(
 );
 
 app.get("/myMovies", checkAuthd, async (req, res) => {
-  console.log(req.query.usid);
   let data = await showMyMovies(req.query.usid);
   res.send(data);
 });
