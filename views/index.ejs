@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+  <script src="./js/script.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/myMovies?usid=<%= userid %>">Movies by user</a>
+    <a href="/movies">All movies</a>
+    <a id="genrecontainer">Genres</a>
+      <div id="genrelist">
+        <a href="/movies/Action">Action</a>
+        <a href="/movies/Adventure">Adventure</a>
+        <a href="/movies/Comedy">Comedy</a>
+        <a href="/movies/Drama">Drama</a>
+        <a href="/movies/Kids">Kids</a>
+        <a href="/movies/Musical">Musical</a>
+      </div>
+    <a href="/users">Users</a>
+    <a href="/login" onclick="logout()">Logout</a>
+  </div>
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+  
+</body>
+</html>
+
+<div class="titles">
+  <h1>My movie tracker</h1>
+<h2>Welcome <%= name %>!</h2>
+</div>
+
+
+
+
+<table>
+  
+  <h4 class= "titles">My watched movies</h4>
+  <tr>
+    <th class="th1" data-column="id" data-order="desc">Movie ID &#9650</th>
+    <th class="th1" data-column="title" data-order="desc">Title &#9650</th>
+    <th class="th1" data-column="genre" data-order="desc">Genre &#9650</th>
+    <th class="th1" data-column="year" data-order="desc">Year &#9650</th>
+    <th class="th" data-column="watched_movies.rating" data-order="desc">My rating</th>
+    <th></th>
+  </tr>
+  <tbody id="myTable">
+
+  </tbody>
+</table>
+
+<table>
+  <h4 class= "titles">All movies</h4>
+  <tr>
+    <th class="th2" data-column="id" data-order="desc">Movie ID&#9650</th>
+    <th class="th2" data-column="title" data-order="desc">Title&#9650</th>
+    <th class="th2" data-column="genre" data-order="desc">Genre&#9650</th>
+    <th class="th2" data-column="year" data-order="desc">Year&#9650</th>
+    <th class="th" data-column="watched_movies.rating" data-order="desc">My rating</th>
+
+
+    <!-- <th>Movie ID</th>
+    <th>Title</th>
+    <th>Genre</th>
+    <th>Year</th>
+    <th>My Rating</th> -->
+    <th></th>
+  </tr>
+  <tbody id="allTable">
+
+  </tbody>
+</table>
+
+<br>
+
+<form id="add-movie" action="/movies" method="POST" style="display: block" class= "titles">
+  <h4>Add a movie to database</h4>
+  <label for="make">Title</label>
+  <input type="text" name="title" id="title" />
+  <label for="model">Genre</label>
+  <select name="genre" id="genre">
+                    <option value="" selected></option>
+                      <option value="Action">Action</option>
+                      <option value="Adventure">Adventure</option>
+                      <option value="Comedy">Comedy</option>
+                      <option value="Drama">Drama</option>
+                      <option value="Kids">Kids</option>
+                      <option value="Musical">Musical</option>
+                    </select>
+
+  <label for="model">Year</label>
+  <input type="text" name="year" id="year"/>
+  <input type="hidden" id="usernameStore" name="username" id="username" value="<%= uname %>"/>
+  <button id="add-btn" form="add-movie" type="submit">Add movie</button>
+</form>
+
+<br>
+<div class="titles">
+  <h4>Remove movie from database</h4>
+  <label for="title">id</label>
+  <input type="text" name="mid" id="midI"/>
+  <button id="del-btn">Remove movie</button>
+</div>
+
+
+  <input type="hidden" id="userIdStore" name="usid" id="usid" value="<%= userid %>"/>
