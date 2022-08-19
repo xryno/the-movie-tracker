@@ -9,11 +9,14 @@ Additionally, has a login/register function built with passport.js/express-sessi
 
 ### Built with
 
-* [![Express][express.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* HTML/CSS/JS
+* Express.js
+* Passport.js
+* Bcrypt.js
+* JQuery
+* Sqlite
+* Sequelize
+
+### Images
+
+![This is an image](/login.png)
